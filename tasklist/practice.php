@@ -1,3 +1,17 @@
+<?php
+   class Slime {
+    // オブジェクトの変数（値）
+    public $type;
+    public $hp;
+    public $power;
+
+}
+
+$Slime = new Slime;
+$Slimes = (array)$Slime;
+
+var_dump($Slimes);
+?>
 <header>
     <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
@@ -8,20 +22,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Tasklists</a>
+                <a class="navbar-brand" href="/">TaskLists</a>
             </div>
+            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    @if (Auth::check())
-                        <li>{!! link_to_route('tasks.create', '新規メッセージの投稿') !!}</li>
-                        
-                        <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
-                            
-                       
-                    @else
-                        <li>{!! link_to_route('signup.get', 'Signup') !!}</li>
-                        <li>{!! link_to_route('login.get', 'Login') !!}</li>
-                    @endif
+                    <li>{!! link_to_route('tasks.create', '新規メッセージの投稿') !!}</li>
+                    <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
                 </ul>
             </div>
         </div>

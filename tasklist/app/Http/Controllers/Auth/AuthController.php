@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+
+
 class AuthController extends Controller
 {
     /*
@@ -28,6 +30,10 @@ class AuthController extends Controller
      *
      * @return void
      */
+     
+    protected $redirectTo = '/';
+    protected $loginPath = '/login'; 
+    
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
